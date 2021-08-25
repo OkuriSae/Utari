@@ -1,4 +1,3 @@
-// import libraries
 import * as functions from "firebase-functions";
 import * as admin from "firebase-admin";
 import * as express from "express";
@@ -6,6 +5,8 @@ import * as bodyParser from "body-parser";
 
 // initialize firebase inorder to access its services
 admin.initializeApp(functions.config().firebase);
+
+import {usersRouter} from "../routes/users";
 
 // initialize express server
 const app = express();
@@ -29,6 +30,8 @@ interface User {
   contactNumber:string
 }
 
+app.use("/users", usersRouter);
+
 // Create new user
 app.post("/users", async (req, res) => {
   try {
@@ -46,25 +49,6 @@ app.post("/users", async (req, res) => {
     res.status(201).send(`Created a new user: ${newDoc.id}`);
   } catch (error) {
     res.status(400).send("error: create user");
-  }
-});
-
-// get all users
-app.get("/users", async (req, res) => {
-  try {
-    const userQuerySnapshot = await db.collection(userCollection).get();
-    const users: any[] = [];
-    userQuerySnapshot.forEach(
-        (doc)=>{
-          users.push({
-            id: doc.id,
-            data: doc.data(),
-          });
-        }
-    );
-    res.status(200).json(users);
-  } catch (error) {
-    res.status(500).send(error);
   }
 });
 
