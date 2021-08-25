@@ -53,7 +53,7 @@ app.post("/users", async (req, res) => {
 app.get("/users", async (req, res) => {
   try {
     const userQuerySnapshot = await db.collection(userCollection).get();
-    const users: any[] = [];
+    const users = [];
     userQuerySnapshot.forEach(
         (doc)=>{
           users.push({
