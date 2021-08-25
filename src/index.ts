@@ -6,7 +6,7 @@ import * as bodyParser from "body-parser";
 // initialize firebase inorder to access its services
 admin.initializeApp(functions.config().firebase);
 
-import {usersRouter} from "../routes/users";
+import {usersRouter} from "./routes/users";
 
 // initialize express server
 const app = express();
