@@ -53,6 +53,7 @@ app.post("/users", async (req, res) => {
 app.get("/users", async (req, res) => {
   try {
     const userQuerySnapshot = await db.collection(userCollection).get();
+    // eslint-disable-next-line
     const users: any[] = [];
     userQuerySnapshot.forEach(
         (doc)=>{
