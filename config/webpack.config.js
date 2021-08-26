@@ -8,7 +8,7 @@ const htmlWebpackPlugin = new HtmlWebPackPlugin({
 module.exports = {
   entry: './src/client/index.tsx',
   output: {
-    path: path.resolve('dist'),
+    path: path.resolve('dist/public'),
     filename: '[name].js',
   },
   module: {
