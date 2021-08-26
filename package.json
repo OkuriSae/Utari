@@ -3,7 +3,7 @@
   "scripts": {
     "lint": "prettier --check src/**/* && eslint --ext .js,.ts,.jsx,.tsx src/**/*",
     "lint:fix": "prettier --write src/**/* && eslint --ext .js,.ts,.jsx,.tsx src/**/* --fix",
-    "build": "tsc",
+    "build": "webpack --config ./config/webpack.config.server.js --mode development",
     "serve": "npm run build && firebase emulators:start --only functions",
     "shell": "npm run build && firebase functions:shell",
     "start": "npm run shell",
@@ -43,7 +43,8 @@
     "typescript": "^3.8.0",
     "webpack": "^5.51.1",
     "webpack-cli": "^4.8.0",
-    "webpack-dev-server": "^4.0.0"
+    "webpack-dev-server": "^4.0.0",
+    "webpack-node-externals": "^3.0.0"
   },
   "private": true,
   "lint-staged": {
