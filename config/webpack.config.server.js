@@ -1,7 +1,7 @@
-const path = require('path')
-const webpack = require('webpack')
-const nodeExternals = require('webpack-node-externals')
-const HtmlWebPackPlugin = require('html-webpack-plugin')
+const path = require('path');
+const webpack = require('webpack');
+const nodeExternals = require('webpack-node-externals');
+const HtmlWebPackPlugin = require('html-webpack-plugin');
 module.exports = {
   entry: './src/server/index.ts',
   output: {
@@ -46,4 +46,4 @@ module.exports = {
   resolve: {
     extensions: ['.tsx', '.ts', '.jsx', '.js'],
   },
-}
+};
