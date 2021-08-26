@@ -6,7 +6,7 @@ module.exports = {
   entry: './src/server/index.ts',
   output: {
     path: path.join(__dirname, '../dist'),
-    publicPath: '/',
+    libraryTarget: 'commonjs2',
     filename: 'index.js',
   },
   target: 'node',
