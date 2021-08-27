@@ -57,6 +57,8 @@ node_modules/
 # Compiled JavaScript files
 dist/**/*.js
 dist/**/*.js.map
+dist/**/*.html
+dist/**/*.txt
 
 # TypeScript v1 declaration files
 typings/
