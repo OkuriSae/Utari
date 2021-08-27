@@ -1,7 +1,7 @@
 FROM node:lts-alpine
 
 RUN apk update
-RUN apk add tzdata 
+RUN apk add tzdata vim tmux
 RUN cp /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
 RUN echo "Asia/Tokyo" >  /etc/timezone
 RUN apk del tzdata
