@@ -12,7 +12,7 @@
     "build:server": "webpack --config ./config/webpack.config.server.js --mode development",
     "build:server:watch": "webpack --config ./config/webpack.config.server.js --mode development --watch",
     "build:watch": "run-p build:*:watch",
-    "build": "npm run build:client && npm run build:server",
+    "build": "run-p build:client build:server",
     "start": "firebase emulators:start",
     "start:local": "run-p build:watch start",
     "deploy": "firebase deploy --only functions",
