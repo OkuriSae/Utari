@@ -72,9 +72,7 @@ usersRouter.delete('/:userId', (req, res) => {
     .doc(req.params.userId)
     .delete()
     .then(() => res.status(204).send('Document successfully deleted!'))
-    .catch(function (error) {
-      res.status(500).send(error);
-    });
+    .catch((error) => res.status(500).send(error));
 });
 
 // Update user
