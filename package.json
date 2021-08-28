@@ -1,10 +1,10 @@
 {
   "name": "functions",
   "scripts": {
-    "eslint": "eslint --ext .js,.ts,.jsx,.tsx src/**/*",
-    "eslint:fix": "eslint --ext .js,.ts,.jsx,.tsx src/**/* --fix",
-    "prettier": "prettier --check src/**/*",
-    "prettier:fix": "prettier --write src/**/*",
+    "eslint": "eslint --ext .js,.ts,.jsx,.tsx 'src/**/*'",
+    "eslint:fix": "eslint --ext .js,.ts,.jsx,.tsx 'src/**/*' --fix",
+    "prettier": "prettier --check 'src/**/*'",
+    "prettier:fix": "prettier --write 'src/**/*'",
     "lint": "run-p eslint prettier",
     "lint:fix": "run-s prettier:fix eslint:fix",
     "build:client": "webpack --config ./config/webpack.config.client.js --mode development",
