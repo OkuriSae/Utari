@@ -21,7 +21,13 @@ module.exports = {
     '/config/**/*',
     '/dist/**/*', // Ignore built files.
   ],
-  plugins: ['@typescript-eslint', 'import'],
+  plugins: ['svelte3', '@typescript-eslint', 'import'],
+  overrides: [
+    {
+      files: ['*.svelte'],
+      processor: 'svelte3/svelte3'
+    }
+  ],
   rules: {
     'quotes': ['error', 'single'],
     'max-len': ['error', {

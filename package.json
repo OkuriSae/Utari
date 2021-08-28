@@ -40,6 +40,7 @@
     "eslint": "^7.32.0",
     "eslint-config-google": "^0.14.0",
     "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-svelte3": "^3.2.0",
     "firebase-functions-test": "^0.2.0",
     "html-loader": "^2.1.2",
     "html-webpack-plugin": "^5.3.2",
@@ -59,11 +60,8 @@
   },
   "private": true,
   "lint-staged": {
-    "src/**/*.{js,ts,jsx,tsx}": [
+    "src/**/*.{js,ts,jsx,tsx,svelte}": [
       "eslint --fix",
-      "prettier --write"
-    ],
-    "src/**/*.svelte": [
       "prettier --write"
     ]
   }
