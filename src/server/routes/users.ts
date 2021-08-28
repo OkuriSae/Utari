@@ -20,8 +20,8 @@ interface User {
 
 usersRouter.get('/', async (req, res) => {
   try {
-    const userQuerySnapshot = await db.collection(userCollection).get() as QuerySnapshot<User>;
-    const users: {id: User['id'], data: User }[] = [];
+    const userQuerySnapshot = (await db.collection(userCollection).get()) as QuerySnapshot<User>;
+    const users: { id: User['id']; data: User }[] = [];
     userQuerySnapshot.forEach((doc) => {
       users.push({
         id: doc.id,
