@@ -1,3 +1,4 @@
+import { QuerySnapshot } from '@google-cloud/firestore';
 import * as express from 'express';
 import * as admin from 'firebase-admin';
 
@@ -19,8 +20,8 @@ interface User {
 
 usersRouter.get('/', async (req, res) => {
   try {
-    const userQuerySnapshot = await db.collection(userCollection).get();
-    const users: any[] = [];
+    const userQuerySnapshot = await db.collection(userCollection).get() as QuerySnapshot<User>;
+    const users: {id: User['id'], data: User }[] = [];
     userQuerySnapshot.forEach((doc) => {
       users.push({
         id: doc.id,
