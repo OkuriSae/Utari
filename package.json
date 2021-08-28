@@ -1,7 +1,9 @@
 {
   "name": "functions",
   "scripts": {
-    "lint": "prettier --check src/**/* && eslint --ext .js,.ts,.jsx,.tsx src/**/*",
+    "eslint": "eslint --ext .js,.ts,.jsx,.tsx src/**/*",
+    "prettier": "prettier --check src/**/*",
+    "lint": "run-p eslint prettier",
     "lint:fix": "prettier --write src/**/* && eslint --ext .js,.ts,.jsx,.tsx src/**/* --fix",
     "build": "webpack --config ./config/webpack.config.server.js --mode development",
     "serve": "npm run build && firebase emulators:start --only functions",
