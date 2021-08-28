@@ -6,11 +6,14 @@ import * as bodyParser from 'body-parser';
 // initialize firebase inorder to access its services
 admin.initializeApp(functions.config().firebase);
 
+import { indexRouter } from './routes/index';
 import { usersRouter } from './routes/users';
 
 // initialize express server
 const app = express();
 const main = express();
+
+main.use('/', indexRouter);
 
 main.use('/api/v1', app);
 main.use(bodyParser.json());
