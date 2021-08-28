@@ -17,7 +17,7 @@ interface User {
   contactNumber: string;
 }
 
-usersRouter.get('/', async (req, res, next) => {
+usersRouter.get('/', async (req, res) => {
   try {
     const userQuerySnapshot = await db.collection(userCollection).get();
     const users: any[] = [];
