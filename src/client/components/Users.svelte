@@ -23,7 +23,7 @@
 {:then users}
   <div>users.id</div>
   {#each users as { id, data }, i}
-    <div>{i}:{id}:{data.id}</div>
+    <div>{i}:{id}:{data.name}</div>
   {/each}
 {:catch error}
   <div style="color: red">{error.message}</div>
