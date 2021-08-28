@@ -14,7 +14,7 @@
     "build:watch": "run-p build:*:watch",
     "build": "run-p build:client build:server",
     "start": "firebase emulators:start",
-    "start:local": "run-p build:watch start",
+    "start:watch": "run-p build:watch start",
     "deploy": "firebase deploy --only functions",
     "logs": "firebase functions:log",
     "prepare": "husky install",
