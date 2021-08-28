@@ -1,3 +1,4 @@
+import { QuerySnapshot } from '@google-cloud/firestore';
 import * as express from 'express';
 import * as admin from 'firebase-admin';
 
@@ -17,10 +18,10 @@ interface User {
   contactNumber: string;
 }
 
-usersRouter.get('/', async (req, res, next) => {
+usersRouter.get('/', async (req, res) => {
   try {
-    const userQuerySnapshot = await db.collection(userCollection).get();
-    const users: any[] = [];
+    const userQuerySnapshot = (await db.collection(userCollection).get()) as QuerySnapshot<User>;
+    const users: { id: User['id']; data: User }[] = [];
     userQuerySnapshot.forEach((doc) => {
       users.push({
         id: doc.id,
@@ -72,9 +73,7 @@ usersRouter.delete('/:userId', (req, res) => {
     .doc(req.params.userId)
     .delete()
     .then(() => res.status(204).send('Document successfully deleted!'))
-    .catch(function (error) {
-      res.status(500).send(error);
-    });
+    .catch((error) => res.status(500).send(error));
 });
 
 // Update user
