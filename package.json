@@ -16,7 +16,7 @@
     "logs": "firebase functions:log",
     "prepare": "husky install",
     "lint-staged": "lint-staged",
-    "test": "npm run lint"
+    "test": "run-p lint"
   },
   "engines": {
     "node": "14"
