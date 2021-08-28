@@ -13,11 +13,12 @@ import { usersRouter } from './routes/users';
 const app = express();
 const main = express();
 
+main.use(bodyParser.json());
+main.use(bodyParser.urlencoded({ extended: false }));
+
 main.use('/', indexRouter);
 
 main.use('/api/v1', app);
-main.use(bodyParser.json());
-main.use(bodyParser.urlencoded({ extended: false }));
 
 app.use('/users', usersRouter);
 
